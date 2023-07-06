@@ -5,133 +5,36 @@ RegisterNetEvent('idrp_vape_model', function(itemName)
 	local ped = GetPlayerPed(-1)
 	local animdict = "anim@heists@humane_labs@finale@keycards"
 	local anim = "ped_b_enter_loop"
-	if DoesEntityExist(ped) and not IsEntityDead(ped) then
-		if IsPedOnFoot(ped) then
-			if IsPlayerAbleToVape == false then
-				IsPlayerAbleToVape = true
-				while (not HasAnimDictLoaded(animdict)) do
-					RequestAnimDict(animdict)
-					Wait(1)
-				end
---Small Vapes
-				if itemName == "idrp_vape_morph" then
-					local prop_name = "idrp_vape_morph"
-					RequestModel(prop_name)
-					TaskPlayAnim(ped, animdict, anim, 8.00, -8.00, -1, (2 + 16 + 32), 0.00, false, false, false)
-					local x,y,z = table.unpack(GetEntityCoords(ped))
-					Vapemodel = CreateObject(GetHashKey(prop_name), x, y, z+0.2,  true,  true, true)
-					AttachEntityToEntity(Vapemodel, ped, GetPedBoneIndex(ped, 64016), 0.06, 0.0, 0.0, -45.0, 0.0, 0.0, true, true, false, true, 1, true)
-					lib.notify({type = 'success', description = ("[E] to take a Hit [G] to stash vape"), position ='center-right'})
-				elseif itemName == "idrp_vape_gblue" then
-					local prop_name = "idrp_vape_gblue"
-					RequestModel(prop_name)
-					TaskPlayAnim(ped, animdict, anim, 8.00, -8.00, -1, (2 + 16 + 32), 0.00, false, false, false)
-					local x,y,z = table.unpack(GetEntityCoords(ped))
-					Vapemodel = CreateObject(GetHashKey(prop_name), x, y, z+0.2,  true,  true, true)
-					AttachEntityToEntity(Vapemodel, ped, GetPedBoneIndex(ped, 64016), 0.06, 0.0, 0.0, -45.0, 0.0, 0.0, true, true, false, true, 1, true)
-					lib.notify({type = 'success', description = ("[E] to take a Hit [G] to stash vape"), position ='center-right'})
-				elseif itemName == "idrp_vape_ggreen" then
-					local prop_name = "idrp_vape_ggreen"
-					RequestModel(prop_name)
-					TaskPlayAnim(ped, animdict, anim, 8.00, -8.00, -1, (2 + 16 + 32), 0.00, false, false, false)
-					local x,y,z = table.unpack(GetEntityCoords(ped))
-					Vapemodel = CreateObject(GetHashKey(prop_name), x, y, z+0.2,  true,  true, true)
-					AttachEntityToEntity(Vapemodel, ped, GetPedBoneIndex(ped, 64016), 0.06, 0.0, 0.0, -45.0, 0.0, 0.0, true, true, false, true, 1, true)
-					lib.notify({type = 'success', description = ("[E] to take a Hit [G] to stash vape"), position ='center-right'})
-				elseif itemName == "idrp_vape_gcyan" then
-					local prop_name = "idrp_vape_gcyan"
-					RequestModel(prop_name)
-					TaskPlayAnim(ped, animdict, anim, 8.00, -8.00, -1, (2 + 16 + 32), 0.00, false, false, false)
-					local x,y,z = table.unpack(GetEntityCoords(ped))
-					Vapemodel = CreateObject(GetHashKey(prop_name), x, y, z+0.2,  true,  true, true)
-					AttachEntityToEntity(Vapemodel, ped, GetPedBoneIndex(ped, 64016), 0.06, 0.0, 0.0, -45.0, 0.0, 0.0, true, true, false, true, 1, true)
-					lib.notify({type = 'success', description = ("[E] to take a Hit [G] to stash vape"), position ='center-right'})
-				elseif itemName == "idrp_vape_gpurple" then
-					local prop_name = "idrp_vape_gpurple"
-					RequestModel(prop_name)
-					TaskPlayAnim(ped, animdict, anim, 8.00, -8.00, -1, (2 + 16 + 32), 0.00, false, false, false)
-					local x,y,z = table.unpack(GetEntityCoords(ped))
-					Vapemodel = CreateObject(GetHashKey(prop_name), x, y, z+0.2,  true,  true, true)
-					AttachEntityToEntity(Vapemodel, ped, GetPedBoneIndex(ped, 64016), 0.06, 0.0, 0.0, -45.0, 0.0, 0.0, true, true, false, true, 1, true)
-					lib.notify({type = 'success', description = ("[E] to take a Hit [G] to stash vape"), position ='center-right'})
-				elseif itemName == "idrp_vape_gred" then
-					local prop_name = "idrp_vape_gred"
-					RequestModel(prop_name)
-					TaskPlayAnim(ped, animdict, anim, 8.00, -8.00, -1, (2 + 16 + 32), 0.00, false, false, false)
-					local x,y,z = table.unpack(GetEntityCoords(ped))
-					Vapemodel = CreateObject(GetHashKey(prop_name), x, y, z+0.2,  true,  true, true)
-					AttachEntityToEntity(Vapemodel, ped, GetPedBoneIndex(ped, 64016), 0.06, 0.0, 0.0, -45.0, 0.0, 0.0, true, true, false, true, 1, true)
-					lib.notify({type = 'success', description = ("[E] to take a Hit [G] to stash vape"), position ='center-right'})
-				elseif itemName == "idrp_vape_gyellow" then
-					local prop_name = "idrp_vape_gyellow"
-					RequestModel(prop_name)
-					TaskPlayAnim(ped, animdict, anim, 8.00, -8.00, -1, (2 + 16 + 32), 0.00, false, false, false)
-					local x,y,z = table.unpack(GetEntityCoords(ped))
-					Vapemodel = CreateObject(GetHashKey(prop_name), x, y, z+0.2,  true,  true, true)
-					AttachEntityToEntity(Vapemodel, ped, GetPedBoneIndex(ped, 64016), 0.06, 0.0, 0.0, -45.0, 0.0, 0.0, true, true, false, true, 1, true)
-					lib.notify({type = 'success', description = ("[E] to take a Hit [G] to stash vape"), position ='center-right'})
---Large Vapes
-				elseif itemName == "idrp_vape_lgblue" then
-					local prop_name = "idrp_vape_lgblue"
-					RequestModel(prop_name)
-					TaskPlayAnim(ped, animdict, anim, 8.00, -8.00, -1, (2 + 16 + 32), 0.00, false, false, false)
-					local x,y,z = table.unpack(GetEntityCoords(ped))
-					Vapemodel = CreateObject(GetHashKey(prop_name), x, y, z+0.2,  true,  true, true)
-					AttachEntityToEntity(Vapemodel, ped, GetPedBoneIndex(ped, 64017), 0.03, 0.0, 0.0, -45.0, 25.0, 0.0, true, true, false, true, 1, true)
-					lib.notify({type = 'success', description = ("[E] to take a Hit [G] to stash vape"), position ='center-right'})
-				elseif itemName == "idrp_vape_lggreen" then
-					local prop_name = "idrp_vape_lggreen"
-					RequestModel(prop_name)
-					TaskPlayAnim(ped, animdict, anim, 8.00, -8.00, -1, (2 + 16 + 32), 0.00, false, false, false)
-					local x,y,z = table.unpack(GetEntityCoords(ped))
-					Vapemodel = CreateObject(GetHashKey(prop_name), x, y, z+0.2,  true,  true, true)
-					AttachEntityToEntity(Vapemodel, ped, GetPedBoneIndex(ped, 64017), 0.03, 0.0, 0.0, -45.0, 25.0, 0.0, true, true, false, true, 1, true)
-					lib.notify({type = 'success', description = ("[E] to take a Hit [G] to stash vape"), position ='center-right'})
-				elseif itemName == "idrp_vape_lgcyan" then
-					local prop_name = "idrp_vape_lgcyan"
-					RequestModel(prop_name)
-					TaskPlayAnim(ped, animdict, anim, 8.00, -8.00, -1, (2 + 16 + 32), 0.00, false, false, false)
-					local x,y,z = table.unpack(GetEntityCoords(ped))
-					Vapemodel = CreateObject(GetHashKey(prop_name), x, y, z+0.2,  true,  true, true)
-					AttachEntityToEntity(Vapemodel, ped, GetPedBoneIndex(ped, 64017), 0.03, 0.0, 0.0, -45.0, 25.0, 0.0, true, true, false, true, 1, true)
-					lib.notify({type = 'success', description = ("[E] to take a Hit [G] to stash vape"), position ='center-right'})
-				elseif itemName == "idrp_vape_lgpurple" then
-					local prop_name = "idrp_vape_lgpurple"
-					RequestModel(prop_name)
-					TaskPlayAnim(ped, animdict, anim, 8.00, -8.00, -1, (2 + 16 + 32), 0.00, false, false, false)
-					local x,y,z = table.unpack(GetEntityCoords(ped))
-					Vapemodel = CreateObject(GetHashKey(prop_name), x, y, z+0.2,  true,  true, true)
-					AttachEntityToEntity(Vapemodel, ped, GetPedBoneIndex(ped, 64017), 0.03, 0.0, 0.0, -45.0, 25.0, 0.0, true, true, false, true, 1, true)
-					lib.notify({type = 'success', description = ("[E] to take a Hit [G] to stash vape"), position ='center-right'})
-				elseif itemName == "idrp_vape_lgred" then
-					local prop_name = "idrp_vape_lgred"
-					RequestModel(prop_name)
-					TaskPlayAnim(ped, animdict, anim, 8.00, -8.00, -1, (2 + 16 + 32), 0.00, false, false, false)
-					local x,y,z = table.unpack(GetEntityCoords(ped))
-					Vapemodel = CreateObject(GetHashKey(prop_name), x, y, z+0.2,  true,  true, true)
-					AttachEntityToEntity(Vapemodel, ped, GetPedBoneIndex(ped, 64017), 0.03, 0.0, 0.0, -45.0, 25.0, 0.0, true, true, false, true, 1, true)
-					lib.notify({type = 'success', description = ("[E] to take a Hit [G] to stash vape"), position ='center-right'})
-				elseif itemName == "idrp_vape_lgyellow" then
-					local prop_name = "idrp_vape_lgyellow"
-					RequestModel(prop_name)
-					while not HasModelLoaded(prop_name) do
-						Wait(0)
+		for _, v in pairs(Config.Vape_Models) do
+		if v.prop == itemName then
+			Prop_name = v.prop
+			if DoesEntityExist(ped) and not IsEntityDead(ped) then
+				if IsPedOnFoot(ped) then
+					if IsPlayerAbleToVape == false then
+						IsPlayerAbleToVape = true
+						while (not HasAnimDictLoaded(animdict)) do
+							RequestAnimDict(animdict)
+							Wait(1)
+						end
+						RequestModel(Prop_name)
+						TaskPlayAnim(ped, animdict, anim, 8.00, -8.00, -1, (2 + 16 + 32), 0.00, false, false, false)
+						local x,y,z = table.unpack(GetEntityCoords(ped))
+						Vapemodel = CreateObject(GetHashKey(Prop_name), x, y, z+0.2,  true,  true, true)
+						AttachEntityToEntity(Vapemodel, ped, GetPedBoneIndex(ped, 64016), 0.06, 0.0, 0.0, -45.0, 0.0, 0.0, true, true, false, true, 1, true)
+						lib.notify({type = 'success', description = ("[E] to take a Hit [G] to stash vape"), position ='center-right'})
+					else
+						lib.notify({type = 'error', description = ("You are not holding your vape"), position ='center-right'})
 					end
-					lib.notify({type = 'success', description = ("[E] to take a Hit [G] to stash vape"), position ='center-right'})
 				else
-					lib.notify({type = 'error', description = ("You are not holding your vape"), position ='center-right'})
+					lib.notify({type = 'error', description = ("Vaping is not allowed in this area"), position ='center-right'})
 				end
 			else
-				lib.notify({type = 'error', description = ("Vaping is not allowed in this area"), position ='center-right'})
+				lib.notify({type = 'error', description = ("The dead can not vape"), position ='center-right'})
 			end
-		else
-			lib.notify({type = 'error', description = ("The dead can not vape"), position ='center-right'})
 		end
 	end
 end)
 
-
----------------------------------
 RegisterNetEvent("idrpVape:VapeAnimFix", function(source)
 	local ped = GetPlayerPed(-1)
 	local dict = "anim@heists@humane_labs@finale@keycards"
@@ -152,7 +55,7 @@ RegisterNetEvent("idrpVape:StopVaping", function(source)
 	end
 end)
 
-RegisterNetEvent("idrpVape:Drag", function()
+RegisterNetEvent("idrp:VapeHit", function()
 	if IsPlayerAbleToVape then
 		local ped = GetPlayerPed(-1)
 		local PedPos = GetEntityCoords(ped)
@@ -217,7 +120,7 @@ Citizen.CreateThread(function()
 			if IsControlPressed(0, Config.DragControl) then
 				Wait(Config.ButtonHoldTime)
 				if IsControlPressed(0, Config.DragControl) then
-					TriggerEvent("idrpVape:Drag", 0)
+					TriggerEvent("idrp:VapeHit", 0)
 				end
 				Wait(Config.VapeCoolDownTime)
 			end
@@ -233,8 +136,6 @@ Citizen.CreateThread(function()
 	end
 end)
 
------------------------------------
-
 function PlayerIsEnteringVehicle()
 	IsPlayerAbleToVape = false
 	local ped = GetPlayerPed(-1)
@@ -249,6 +150,6 @@ function PlayerIsUnableToVape()
 	local ped = GetPlayerPed(-1)
 	DeleteObject(Vapemodel)
 	SetModelAsNoLongerNeeded(Vapemodel)
-	ClearPedTasksImmediately(ped)
+	--ClearPedTasksImmediately(ped)		--commented so if sitting you do not stand when putting vape away
 	ClearPedSecondaryTask(ped)
 end
