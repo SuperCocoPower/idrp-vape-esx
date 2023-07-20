@@ -18,5 +18,5 @@ INSERT INTO `items` (`name`, `label`, `weight`, `rare`, `can_remove`) VALUES
 	("idrp_vape_mred", 'idrp_vape_mred', 1, 0, 1),
 	("idrp_vape_myellow", 'idrp_vape_myellow', 1, 0, 1),
 	("idrp_vape_mblue", 'idrp_vape_mblue', 1, 0, 1),
-	("idrp_vape_mcyan", 'idrp_vape_mcyan', 1, 0, 1),
+	("idrp_vape_mcyan", 'idrp_vape_mcyan', 1, 0, 1)
 ;
